@@ -8,10 +8,10 @@ class Student {
 public:
 	const static int arraySize = 3;
 	Student(); //default constructor;
-	Student(int studentId, string firstname, string lastname, string email, int age, int days[], DegreeProgram degreeProgram);
+	Student(string studentId, string firstname, string lastname, string email, int age, int days[], DegreeProgram degreeProgram);
 	~Student(); //Deconstructor
 
-	int getStudentId();
+	string getStudentId();
 	string getFirstName();
 	string getLastName();
 	string getEmail();
@@ -19,7 +19,7 @@ public:
 	int* getDays();
 	DegreeProgram getDegreeProgram();
 
-	void setStudentId(int studentId);
+	void setStudentId(string studentId);
 	void setFirstName(string firstname);
 	void setLastName(string lastname);
 	void setEmail(string email);
@@ -30,7 +30,7 @@ public:
 	void print();
 
 private: 
-	int studentId;
+	string studentId;
 	string firstname;
 	string lastname;
 	string email;

@@ -7,7 +7,7 @@ Student::Student()	//default constructor
 {
 
 }
-Student::Student(int studentId, string firstname, string lastname, string email, int age, int days[], DegreeProgram degreeProgram)
+Student::Student(string studentId, string firstname, string lastname, string email, int age, int days[], DegreeProgram degreeProgram)
 {
 	this->studentId = studentId;
 	this->firstname = firstname;
@@ -18,7 +18,7 @@ Student::Student(int studentId, string firstname, string lastname, string email,
 	/*this->days = days;*/
 	this->degreeProgram = degreeProgram;
 }
-int Student::getStudentId()
+string Student::getStudentId()
 {
 	return studentId;
 }
@@ -44,7 +44,7 @@ int* Student::getDays()
 }
 DegreeProgram Student::getDegreeProgram() { return degreeProgram; }
 
-void Student::setStudentId(int studentId) { this->studentId = studentId; }
+void Student::setStudentId(string studentId) { this->studentId = studentId; }
 void Student::setFirstName(string firstname) { this->firstname = firstname; }
 void Student::setLastName(string lastname) { this->lastname = lastname; }
 void Student::setEmail(string email) { this->email = email; }
@@ -52,6 +52,11 @@ void Student::setAge(int age) { this->age = age; }
 
 //FIXME: Use for loop to set days individually
 //void Student::setDays(int days[]) {this->days[] = days[]; }
+void Student::setDays(int days[]) {
+	for (int i = 0; i < arraySize; ++i) {
+		this->days[i] = days[i];
+	}
+}
 
 void Student::setDegreeProgram(DegreeProgram degreeProgam) { this->degreeProgram = degreeProgam; }
 
@@ -62,6 +67,24 @@ void Student::print()
 	cout << getLastName() << '\t';
 	cout << getEmail() << '\t';
 	cout << getAge() << '\t';
-	cout << getDays() << '\t';
-	cout << getDegreeProgram() << endl;
+	/*cout << getDays()[0] << '\t';
+	cout << getDays()[1] << '\t';
+	cout << getDays()[2] << '\t';*/
+	int* days = getDays();
+	for (int i = 0; i < arraySize; ++i) {
+		cout << days[i] << " ";
+	}
+	string degreeString = "";
+	switch (getDegreeProgram()) {
+	case DegreeProgram::SECURITY:
+		degreeString = "SECURITY";
+		break;
+	case DegreeProgram::NETWORK:
+		degreeString = "NETWORK";
+		break;
+	case DegreeProgram::SOFTWARE:
+		degreeString = "SOFTWARE";
+		break;
+	}
+	cout << "\t" << degreeString << endl;
 }
