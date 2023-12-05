@@ -16,6 +16,7 @@ Student::Student(string studentId, string firstname, string lastname, string ema
 	this->age = age;
 	//FIXME: get days from days array using for loop
 	/*this->days = days;*/
+	setDays(days);
 	this->degreeProgram = degreeProgram;
 }
 string Student::getStudentId()
@@ -53,6 +54,7 @@ void Student::setAge(int age) { this->age = age; }
 //FIXME: Use for loop to set days individually
 //void Student::setDays(int days[]) {this->days[] = days[]; }
 void Student::setDays(int days[]) {
+	this->days = new int[arraySize];
 	for (int i = 0; i < arraySize; ++i) {
 		this->days[i] = days[i];
 	}
@@ -88,3 +90,4 @@ void Student::print()
 	}
 	cout << "\t" << degreeString << endl;
 }
+Student::~Student() {}

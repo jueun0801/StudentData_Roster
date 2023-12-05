@@ -9,7 +9,7 @@ public:
 	const static int arraySize = 3;
 	Student(); //default constructor;
 	Student(string studentId, string firstname, string lastname, string email, int age, int days[], DegreeProgram degreeProgram);
-	~Student(); //Deconstructor
+	~Student(); //Destructor
 
 	string getStudentId();
 	string getFirstName();
@@ -37,6 +37,7 @@ private:
 	int age;
 
 	//const static int arraySize = 3;
-	int days[arraySize]; //array of number of days to complete each course
+	/*int days[arraySize];*/ //array of number of days to complete each course
+	int* days;
 	DegreeProgram degreeProgram;
 };
