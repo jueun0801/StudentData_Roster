@@ -5,7 +5,15 @@ using namespace std;
 
 Student::Student()	//default constructor
 {
-
+	studentId = "";
+	firstname = "";
+	lastname = "";
+	email = "";
+	age = 0;
+	for (int i = 0; i < arraySize; ++i) {
+		days[i] = 0;
+	}
+	degreeProgram = DegreeProgram::SECURITY;
 }
 Student::Student(string studentId, string firstname, string lastname, string email, int age, int days[], DegreeProgram degreeProgram)
 {

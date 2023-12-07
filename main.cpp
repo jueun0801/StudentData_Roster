@@ -18,12 +18,6 @@ int main() {
 	cout << "Student ID: 010947944" << endl;
 	cout << "Name: Jueun Yeon" << endl;
 	cout << endl;
-	/*Roster student;
-	const int students = 5;
-	for (i = 0; i < students; ++i) {
-		student.parse(studentData[i]);
-	}
-	student.printAll();*/
 
 	Roster classRoster;
 
